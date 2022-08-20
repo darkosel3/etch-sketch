@@ -11,12 +11,9 @@ let type;
 let currentSize;
 var mouseIsDown = false;
 
-
-
-// rangeInput.onmousemove = ( e ) => updateGrid( e.target.value );
-
 const clearDivs = function () {
   gridContainer.querySelectorAll( 'div' ).forEach( e => e.style.backgroundColor = 'white' );
+  mouseIsDown = false;
 };
 
 const updateSizeValue = function ( input ) {
@@ -26,11 +23,9 @@ const updateSizeValue = function ( input ) {
 const colorGrid = function ( e ) {
   if ( mouseIsDown ) {
     if ( type === 'black' ) {
-      console.log( "black" );
       this.style.backgroundColor = 'black';
     }
     else if ( type === 'rainbow' ) {
-      console.log( "rainBow" );
       this.style.backgroundColor = randomRGBN();
     } else {
       this.style.backgroundColor = 'white';
@@ -85,7 +80,7 @@ rangeInput.oninput = function ( e ) {
 
 
 gridContainer.addEventListener( 'mousedown', function () { mouseIsDown = true; } );
-gridContainer.addEventListener( 'mouseup', function () { mouseIsDown = false; } );
+document.addEventListener( 'mouseup', function () { mouseIsDown = false; } );
 clearButton.addEventListener( 'click', clearDivs );
 rainBowButton.addEventListener( 'click', rainBow );
 blackButton.addEventListener( 'click', blackColor );
