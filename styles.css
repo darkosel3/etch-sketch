@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	/* footer support */
+	position: relative;
+	min-height: 100%;
+}
+body {
+	background-color: #ededed;
+	font-family: Inter, sans-serif;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.divContainer {
+	display: grid;
+	width: 500px;
+	height: 500px;
+	background-color: #fefefe;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.options {
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+	justify-content: space-between;
+	margin-right: 30px;
+	margin-bottom: 100px;
+	gap: 15px;
+}
+
+.size-value {
+	text-align: center;
+}
+
+.h1 {
+	text-align: center;
+	font-size: 45px;
+	margin-bottom: 20px;
+	color: 1a202c;
+}
+
+/* <!-- HTML !-->
+<button class="button-85" role="button">Button 85</button> */
+
+/* CSS
+<!-- HTML !-->
+<button class="button-47" role="button">Button 47</button> */
+
+/* CSS */
+.button-47 {
+	align-items: center;
+	background: #ffffff;
+	border: 0 solid #e2e8f0;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-sizing: border-box;
+	color: #1a202c;
+	display: inline-flex;
+	font-family: Inter, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 56px;
+	justify-content: center;
+	line-height: 24px;
+	overflow-wrap: break-word;
+	padding: 24px;
+	text-decoration: none;
+	width: auto;
+	border-radius: 8px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	transition: all 0.4s ease-in;
+}
+
+.button-47:hover {
+	background-color: #1a202c;
+	color: #ffffff;
+}
