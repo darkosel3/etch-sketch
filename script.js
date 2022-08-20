@@ -9,6 +9,7 @@ const blackButton = document.getElementById( 'blackBtn' );
 const eraserButton = document.getElementById( 'eraserBtn' );
 let type;
 let currentSize;
+var mouseIsDown = false;
 
 
 
@@ -23,15 +24,17 @@ const updateSizeValue = function ( input ) {
 };
 
 const colorGrid = function ( e ) {
-  if ( type === 'black' ) {
-    console.log( "black" );
-    this.style.backgroundColor = 'black';
-  }
-  else if ( type === 'rainbow' ) {
-    console.log( "rainBow" );
-    this.style.backgroundColor = randomRGBN();
-  } else {
-    this.style.backgroundColor = 'white';
+  if ( mouseIsDown ) {
+    if ( type === 'black' ) {
+      console.log( "black" );
+      this.style.backgroundColor = 'black';
+    }
+    else if ( type === 'rainbow' ) {
+      console.log( "rainBow" );
+      this.style.backgroundColor = randomRGBN();
+    } else {
+      this.style.backgroundColor = 'white';
+    }
   }
 };
 
@@ -79,8 +82,14 @@ rangeInput.oninput = function ( e ) {
   updateGrid( e.target.value );
 };
 
+
+
+gridContainer.addEventListener( 'mousedown', function () { mouseIsDown = true; } );
+gridContainer.addEventListener( 'mouseup', function () { mouseIsDown = false; } );
 clearButton.addEventListener( 'click', clearDivs );
 rainBowButton.addEventListener( 'click', rainBow );
 blackButton.addEventListener( 'click', blackColor );
 eraserButton.addEventListener( 'click', whiteColor );
 updateGrid( 16 );
+
+
